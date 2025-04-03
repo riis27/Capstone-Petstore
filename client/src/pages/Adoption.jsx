@@ -1,6 +1,6 @@
 // Adoption.jsx
 import React, { useEffect, useState } from 'react';
-import '../styles/style.css';
+import '../styles/Adoption.css';
 
 const PetBox = ({ pet }) => {
   const [expanded, setExpanded] = useState(false);
@@ -104,7 +104,7 @@ const Adoption = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Meet Our Adorable Adoptables</h1>
-      <div className="pet-container d-flex flex-wrap justify-content-center gap-4">
+      <div className="pet-container">
         {pets.map((pet, index) => (
           <PetBox key={index} pet={pet} />
         ))}
