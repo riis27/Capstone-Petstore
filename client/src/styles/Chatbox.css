@@ -1,66 +1,104 @@
 .chatbox {
     position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 2rem;
+    right: 2rem;
     z-index: 1000;
   }
   
   .toggle-btn {
-    background-color: #007bff;
-    color: white;
+    background: linear-gradient(to right, #e75480, #ffb6c1);
     border: none;
+    color: white;
     border-radius: 50%;
-    padding: 0.75rem 1rem;
     font-size: 1.5rem;
+    padding: 0.8rem 1rem;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .animated-bubble {
+    animation: bounce 1s infinite alternate;
+  }
+  
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
   }
   
   .chat-window {
-    background: white;
-    border: 1px solid #ccc;
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 420px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
     overflow: hidden;
+    position: relative;
   }
   
   .chat-messages {
     flex: 1;
     padding: 1rem;
     overflow-y: auto;
+    font-family: 'Merienda', cursive;
   }
   
   .message {
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    max-width: 80%;
+    line-height: 1.4;
+    transition: all 0.3s ease-in-out;
   }
   
   .message.user {
-    text-align: right;
+    background: #ffe6f0;
+    align-self: flex-end;
     color: #333;
   }
   
   .message.bot {
-    text-align: left;
-    color: #007bff;
+    background: #e6f3ff;
+    align-self: flex-start;
+    color: #004f7c;
   }
   
   .chat-input {
     display: flex;
-    padding: 0.5rem;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #eee;
+    padding: 0.75rem;
   }
   
   .chat-input input {
     flex: 1;
     padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+    background: #f9f9f9;
   }
   
   .chat-input button {
-    padding: 0.5rem;
-    background: #007bff;
-    color: white;
+    background: #e75480;
     border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .chat-input button:hover {
+    background: #d2436e;
   }
   

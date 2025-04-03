@@ -3,7 +3,7 @@ export const Navbar = () => {
       <nav className="navbar navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img src="/assets/logo.jpeg" alt="Pawsh Logo" className="navbar-image" />
+            <img src="/logo.jpeg" alt="Pawsh Logo" className="navbar-image" />
           </a>
           <button
             className="navbar-toggler"
