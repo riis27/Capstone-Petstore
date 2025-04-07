@@ -89,3 +89,15 @@ p {
     margin-top: auto;
   }
   
+
+/* Vote button style  */
+.vote-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.vote-buttons button {
+  min-width: 100px;
+  font-weight: bold;
+}

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const petSchema = new mongoose.Schema({
   name: String,
@@ -8,14 +8,15 @@ const petSchema = new mongoose.Schema({
   disposition: String,
   traits: String,
   image: String,
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
   votes: {
     type: Number,
     default: 0
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Pet', petSchema);
+const Pet = mongoose.model('Pet', petSchema);
+export default Pet;

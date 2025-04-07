@@ -9,6 +9,8 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
+import Registered from './pages/Registered';
+
 
 function App() {
   return (
