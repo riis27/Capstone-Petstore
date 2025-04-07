@@ -1,0 +1,149 @@
+.faqs-wrapper {
+    font-family: "Castoro Titling", serif;
+    color: #222;
+    text-align: center;
+  }
+  
+  .faqs-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+  }
+  
+  .faqs-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .faqs-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .faq-content {
+    padding: 40px;
+  }
+  
+  .faqs-content {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .faqs-title {
+    font-size: 4rem;
+    font-weight: lighter;
+    font-family: "Kaushan Script", cursive;
+  }
+  
+  .faqs-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  /* FAQ Items */
+  .faq-item {
+    background-color: #fefefe;
+    border: 1px solid #e6e6fa;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .faq-item:hover {
+    background-color: #f9f9ff;
+  }
+  
+  .faq-question {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  .arrow {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c63ff;
+  }
+  
+  /* ─────────────────────────────── */
+  /* ✅ Responsive Adjustments       */
+  /* ─────────────────────────────── */
+  
+  /* S - Phones (330px–767px) */
+  @media (min-width: 200px) and (max-width: 430px) {
+    .faqs-content {
+      top: 85%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .faqs-title {
+      font-size: 1.7rem;
+    }
+  
+    .faqs-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* M – Tablets / Small Laptops (768px–1024px) */
+  @media (min-width: 53px) and (max-width: 1024px) {
+    .faqs-section {
+      height: 50vh;
+    }
+  
+    .faqs-content {
+      top: 80%;
+    }
+  
+    .faqs-title {
+      font-size: 2.5rem;
+    }
+  
+    .faqs-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* L – Large screens (1025px–1440px) */
+  @media (min-width: 1025px) and (max-width: 1440px) {
+    .faqs-title {
+      font-size: 3.5rem;
+    }
+  
+    .faqs-subtitle {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* XL – Desktops and 4K Screens */
+  @media (min-width: 1441px) {
+    .faqs-title {
+      font-size: 4.5rem;
+    }
+  
+    .faqs-subtitle {
+      font-size: 1.5rem;
+    }
+  }
+  

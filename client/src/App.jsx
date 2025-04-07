@@ -22,6 +22,7 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/registered" element={<Registered />} />
       </Routes>
       <Chatbox />
       <Footer />

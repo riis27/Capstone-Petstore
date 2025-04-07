@@ -1,98 +1,98 @@
 // Contact.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Contact.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const handleChange = (e) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    'https://images.unsplash.com/photo-1609847214764-eb745f0178a0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMxfHxGYW1pbHklMjBwaG90byUyMHdpdGglMjBwZXR8ZW58MHwxfDB8fHwy',
+    'https://images.unsplash.com/photo-1616639791792-85f92d79b193?w=800&auto=format&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1729874585575-2e0b3edd3784?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Form submitted:', formData);
-      // Optionally connect this to your backend (MERN/JWT)
-    } catch (error) {
-      console.error('Error submitting form:', error);
+      const res = await fetch('/api/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        navigate('/registered');
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
     }
   };
 
   return (
-    <main className="contact-wrapper">
-      <section className="contact-hero">
-        <div className="overlay">
-          <div className="content">
-            <h2 className="title">Contact Us</h2>
-            <p className="subtitle">
-              We’d love to hear from you! Reach out for questions, comments, or collaboration ideas.
-            </p>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Your message"
-                rows="6"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              />
-              <button type="submit" className="btn btn-dark">Send</button>
-            </form>
-          </div>
+    <>
+      <div className="contact-page">
+        <div className="carousel-container">
+          <img
+            src={images[currentImage]}
+            alt="pet-carousel"
+            className="carousel-image"
+          />
         </div>
-      </section>
 
-      <section className="contact-details container py-5">
-        <div className="row">
-          <div className="col-md-6 mb-4">
-            <h5>About Us</h5>
-            <p>
-              We help furry friends find their forever homes while creating lifelong memories. 
-              Feel free to reach out and ask us anything!
-            </p>
-          </div>
-          <div className="col-md-6">
-            <div className="info-block">
-              <h6>Address:</h6>
-              <p>Via Cesare Rosaroll st. 118, 80139 Sofia</p>
-            </div>
-            <div className="info-block">
-              <h6>Phone:</h6>
-              <a href="tel:+7599334345">+759 933 43 45</a>
-            </div>
-            <div className="info-block">
-              <h6>Email:</h6>
-              <a href="mailto:wiso@info.com">wiso@info.com</a>
-            </div>
-          </div>
+        <div className="form-container">
+          <h1>Contact Me</h1>
+          <h2>
+            Are you interested in working together?
+            <br />
+            Do you have any questions or just want to say hi?
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              name="name"
+              type="text"
+              placeholder="Your name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Your e-mail"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
         </div>
-      </section>
-    </main>
+      </div>
+    </>
   );
 };
 

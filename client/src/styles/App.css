@@ -1,0 +1,225 @@
+/* General Styling */
+
+html,
+body 
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Benne", serif;
+    margin: 0;
+    padding-bottom: 0px;
+    text-align: center;
+    min-height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1707209856575-a80b9dff5524?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+  /* ─────────────────────────────── */
+  /* ✅ Responsive Adjustments       */
+  /* ─────────────────────────────── */
+  
+/* XS Phone */
+@media (min-width: 300px) and (max-width: 430px) {
+    .featured-pet details {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        color: white;
+        box-sizing: content-box;
+        text-align: center;
+        border: none;
+    }
+
+    .pet-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 10px;
+    }
+
+    .pet-box {
+        padding: 10px;
+        font-size: 0.85em;
+        margin: 5px;
+    }
+
+    .pet-box img {
+        margin-bottom: 5px;
+    }
+
+    .pet-box h3 span.age {
+        margin: 5px;
+        font-size: 0.75em;
+    }
+
+    .pet-box h3 {
+        font-size: 1.5em;
+    }
+
+
+    .adoption,
+    .details,
+    .stories,
+    .team,
+    .thanks,
+    .faqs,
+    .services,
+    .contacts {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .image-block img,
+    .stories .story img,
+    .team .member img,
+    .thanks img,
+    .services img,
+    .contacts img {
+        height: 150px;
+    }
+
+    .stories .story,
+    .team .member {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stories .story img,
+    .team .member img {
+        margin-right: 0;
+        margin-bottom: 5px;
+        width: 50px;
+        height: 50px;
+    }
+
+
+    #contact-container {
+        height: 80vh;
+        width: 80vw;
+        align-self: center;
+
+    }
+}
+
+
+/* Phone */
+@media (max-width: 767px) {
+
+    .pet-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 10px;
+    }
+
+    .pet-box {
+        padding: 10px;
+        font-size: 0.85em;
+        margin: 5px;
+    }
+
+    .pet-box img {
+        margin-bottom: 5px;
+    }
+
+    .pet-box h3 span.age {
+        margin: 5px;
+        font-size: 0.75em;
+    }
+
+    .pet-box h3 {
+        font-size: 1.5em;
+    }
+
+
+
+    #contact-container {
+        height: 80vh;
+        width: 80vw;
+        align-self: center;
+    }
+
+}
+
+
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+
+    .pet-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Responsive columns */
+        grid-template-rows: auto;
+        grid-gap: 20px;
+    }
+
+    .pet-box {
+        padding: 20px;
+        font-size: 0.9em;
+        margin: 10px;
+    }
+
+    .pet-box img {
+        margin-bottom: 10px;
+    }
+
+    .pet-box h3 span.age {
+        margin: 15px;
+        font-size: 0.7em;
+    }
+
+    .pet-box h3 {
+        font-size: 1.5em;
+    }
+
+
+}
+
+
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1180px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+        flex: 1;
+        padding: 20px;
+    }
+
+    .featured-pet .image-block img {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* Desktop and larger */
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns on larger screens */
+        flex: 1;
+        padding: 20px;
+    }
+
+    .featured-pet .image-block img {
+        height: 400px;
+    }
+
+    #contact-container {
+        display: block;
+        flex: 1;
+        align-items: left !important;
+        height: 80vh;
+
+
+
+
+    }
+}

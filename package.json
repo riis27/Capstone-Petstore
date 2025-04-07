@@ -1,5 +1,26 @@
 {
+  "name": "capstone-petstore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack MERN Capstone project with client/server separation",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix ./client\" \"npm run server --prefix ./server\"",
+    "client": "npm start --prefix ./client",
+    "server": "nodemon ./server/server.js"
+  },
   "dependencies": {
-    "mongodb": "^6.15.0"
-  }
+    "concurrently": "^9.1.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/riis27/Capstone-Petstore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riis27/Capstone-Petstore/issues"
+  },
+  "homepage": "https://github.com/riis27/Capstone-Petstore#readme",
+  "author": "Rissa Iquina",
+  "license": "ISC",
+  "keywords": ["mern", "react", "express", "mongodb", "capstone", "petstore"]
 }

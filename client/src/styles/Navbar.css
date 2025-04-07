@@ -1,0 +1,55 @@
+.navbar-image {
+  max-width: 100px;
+  height: auto;
+}
+
+header {
+  background-color: #f0f0f0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+
+}
+
+.navbar {
+  width: 100%;
+  padding: 10px;
+}
+
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header.sticky {
+  background-color: rgba(240, 240, 240, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-slogan {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul {
+  list-style: inside;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 10px;
+}
+
+.navbar-font {
+  font-family: "Castoro Titling", serif;
+  font-weight: 600;
+}

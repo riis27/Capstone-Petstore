@@ -1,0 +1,267 @@
+main {
+    padding: 20px;
+    flex: 1;
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+}
+
+main h1 {
+    font-family: "Kaushan Script", cursive;
+    font-size: 3rem;
+}
+
+main h2 {
+    padding: 10px;
+    font-size: 1.7em;
+    font-family: "Castoro Titling", serif;
+}
+
+main p {
+    padding: 10px;
+}
+
+.details p span {
+    font-weight: bold;
+}
+
+/* Header Image  */
+.featured-pet {
+    grid-column: 1 / -1;
+    /* Span all columns by default */
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-pet .image-block img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 1.9s ease;
+    height: 400px;
+}
+
+.featured-pet .details {
+    position: absolute;
+    top: 80%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    color: black;
+    font-family: "Kaushan Script", cursive;
+    box-sizing: content-box;
+    text-align: right;
+    border: none;
+}
+
+.featured-pet .details h2 {
+    margin-top: 0;
+    font-size: 1.9em;
+}
+
+.featured-pet:hover .image-block img {
+    transform: scale(1.5);
+    /* Hover effect */
+}
+
+.highlights,
+.adoption,
+.details,
+.stories,
+.team,
+.thanks,
+.faqs,
+.services,
+.contacts {
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.image-block {
+    text-align: center;
+    overflow: hidden;
+}
+
+.image-block img,
+.stories .story img,
+.team .member img,
+.thanks img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+/* Highlights */
+.note {
+    font-style: italic;
+    font-weight: bold;
+    font-family: "Kaushan Script", cursive;
+    font-size: .9em;
+}
+
+.highlights p {
+    font-size: small;
+}
+
+/* Store Hours */
+.details p {
+    margin: auto;
+}
+
+.story p {
+    text-align: right;
+    font-size: small;
+}
+
+.member p {
+    text-align: left;
+    font-size: small;
+}
+
+
+
+
+
+
+/* Member & Customer Styles */
+.stories p {
+    padding-left: 20px;
+}
+
+.member p {
+    padding-right: 20px;
+}
+
+.stories .story,
+.team .member {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.stories .story img,
+.team .member img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.thanks {
+    font-family: "Kaushan Script", cursive;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+/*  Button Style */
+main .button {
+    background-color: rgb(129, 111, 116);
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    padding: 12px 50px 8px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+main .button:hover {
+    background-color: rgb(140, 185, 140);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+
+
+/* About Page style */
+.Letter h2 {
+    padding-top: 30px;
+    .benne-regular {
+        font-family: "Benne", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      }
+
+.Letter sup {
+    font-size: 0.5em;
+}
+
+.Letter {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    flex: 1;
+
+}
+
+.Letter img {
+    border-radius: 40px !important;
+
+    margin: 20px;
+    align-self: center;
+    max-width: 100%;
+}
+
+
+
+/* Adoption Page Style */
+.pet-box {
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    /* Smooth scaling on hover */
+}
+
+.pet-box:hover {
+    transform: scale(1.05);
+    /* Scale up slightly on hover */
+
+}
+
+.pet-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.pet-box h3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    font-weight: bold;
+    align-items: center;
+}
+
+.pet-box h3 span.age {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #777;
+    margin: 15px;
+}
+
+.pet-info {
+    display: none;
+    margin-top: 10px;
+}
+
+.pet-info p {
+    margin-bottom: 5px;
+}
+
+.pet-info strong {
+    font-weight: bold;
+}
+
+.pet-container {
+    display: grid;
+    grid-gap: 20px;
+}

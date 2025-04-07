@@ -1,0 +1,109 @@
+/* Footer Styling */
+
+.footer {
+    background-color: #5a5050;
+    color: white;
+    padding: 40px 20px 10px;
+    width: 100%;
+    font-family: "Benne", serif;
+    box-sizing: border-box;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-title {
+    font-family: "Castoro Titling", serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .footer-column p {
+    font-size: 1rem;
+    margin: 5px 0;
+    font-family: "Benne", serif;
+    text-align: left;
+  }
+  
+  .footer-subscribe-title {
+    font-family: "Castoro Titling", serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-align: right;
+  }
+  
+  .footer-subscribe-text {
+    font-family: "Benne", serif;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: right;
+  }
+  
+  .footer form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: "Benne", serif;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .footer-button {
+    background-color: rgb(175, 165, 170);
+    border-radius: 10px;
+    padding: 10px 25px; 
+    font-weight: bolder;
+    font-size: 1rem; 
+    font-family: "Benne", serif;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 100%; /* ensures it fills flex height */
+  }
+  
+  
+  .footer-button:hover {
+    background-color: rgb(185, 140, 150);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Benne", serif;
+    color: #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer form {
+      flex-direction: column;
+    }
+  
+    .footer-input {
+      min-width: 100%;
+    }
+  }
+  

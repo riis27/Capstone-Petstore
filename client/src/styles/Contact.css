@@ -1,116 +1,89 @@
-/* Contact Page - WISO Inspired Styling */
+.contact-page {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  align-items: stretch;
+}
 
-.contact-wrapper {
-    font-family: 'Merienda', cursive;
-    color: #222;
-    background-color: #fff;
+.carousel-container {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
   }
-  
-  .contact-hero {
-    position: relative;
-    min-height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1554830072-52d78d0d4c18');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.form-container {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: left;
+}
+
+.form-container h5 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.form-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-bottom-color: #555;
+}
+
+form button {
+  background-color: rgb(185, 140, 150);
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #444;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .contact-page {
+    flex-direction: column;
   }
-  
-  .overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 60px 30px;
-    max-width: 800px;
-    width: 90%;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  .carousel-container {
+    height: 300px;
   }
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+
+  .form-container {
+    padding: 20px;
   }
-  
-  .subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #333;
-  }
-  
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #e75480;
-    outline: none;
-  }
-  
-  .contact-form button {
-    background-color: #000;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-form button:hover {
-    background-color: #222;
-  }
-  
-  .contact-details {
-    background-color: #f8f8f8;
-    border-top: 1px solid #eee;
-    padding: 60px 15px;
-    font-size: 1rem;
-  }
-  
-  .contact-details h5 {
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-details h6 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .contact-details .info-block {
-    margin-bottom: 1.2rem;
-  }
-  
-  .contact-details a {
-    color: #e75480;
-    text-decoration: none;
-  }
-  
-  .contact-details a:hover {
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 768px) {
-    .overlay {
-      padding: 40px 20px;
-    }
-    .title {
-      font-size: 2rem;
-    }
-    .subtitle {
-      font-size: 1rem;
-    }
-  }
-  
+}

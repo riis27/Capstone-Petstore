@@ -1,11 +1,15 @@
-export const Home = () => (
+ //Home.jsx 
+import React from 'react';
+import "../styles/Home.css";
+
+ const Home = () => (
     <main>
       <section className="featured-pet">
         <div className="image-block">
           <img src="https://images.unsplash.com/photo-1466995937966-2e6f29c6ed60?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Featured Pet" />
         </div>
         <div className="details">
-          <h2>Bringing you closer to your favorite memories.</h2>
+          <h1>Bringing you closer to your favorite memories.</h1>
         </div>
       </section>
   
@@ -75,7 +79,7 @@ export const Home = () => (
   
       <section className="services">
         <div className="image-block">
-          <img src="https://images.pexels.com/photos/14219030/pexels-photo-142190-30.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Membership" />
+          <img src="https://images.pexels.com/photos/14219030/pexels-photo-14219030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Membership" />
         </div>
         <h2>Check Out Our</h2>
         <a href="/services" className="button">Services</a>

@@ -1,6 +1,7 @@
 {
-  "name": "capstone-petstore-client",
+  "name": "capstone-petstore-server",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix client\" \"npm run server --prefix server\"",
