@@ -1,3 +1,5 @@
+/* Home.css */
+
 main {
     padding: 20px;
     flex: 1;
@@ -28,7 +30,6 @@ main p {
 /* Header Image  */
 .featured-pet {
     grid-column: 1 / -1;
-    /* Span all columns by default */
     position: relative;
     overflow: hidden;
 }
@@ -44,7 +45,7 @@ main p {
 
 .featured-pet .details {
     position: absolute;
-    top: 80%;
+    top: 77%;
     left: 72%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -62,7 +63,6 @@ main p {
 
 .featured-pet:hover .image-block img {
     transform: scale(1.5);
-    /* Hover effect */
 }
 
 .highlights,
@@ -217,12 +217,10 @@ main .button:hover {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.5s;
-    /* Smooth scaling on hover */
 }
 
 .pet-box:hover {
     transform: scale(1.05);
-    /* Scale up slightly on hover */
 
 }
 

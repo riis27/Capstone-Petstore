@@ -1,0 +1,43 @@
+.about-page {
+    max-width: 850px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    font-family: "Castoro Titling", serif;    
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #333;
+    background-color: transparent;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #444;
+  }
+  
+  .about-image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .about-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .about-page h3 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #444;
+    font-weight: 600;
+  }
+  
+  .about-page p {
+    margin-bottom: 1.5rem;
+  }
+  

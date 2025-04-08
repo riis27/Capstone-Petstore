@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { decodeToken } from '../utils/decodeToken'; // Adjust path if needed
+import { Link, useNavigate } from 'react-router-dom';
 import "../styles/Navbar.css";
 
 const Navbar = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const decoded = decodeToken();
+    if (decoded) {
+      setUser(decoded);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setUser(null);
+    navigate('/'); // optional: redirect to home
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light benne-font">
       <div className="container-fluid">
@@ -39,6 +57,25 @@ const Navbar = () => {
             <li className="nav-item">
               <a className="nav-link" href="/contact">Contact</a>
             </li>
+            {user ? (
+              <>
+                <li className="nav-item nav-link text-muted">
+                  👋 Welcome, {user.email}
+                </li>
+                <li className="nav-item">
+                  <button
+                    className="btn btn-sm btn-outline-secondary ms-2"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

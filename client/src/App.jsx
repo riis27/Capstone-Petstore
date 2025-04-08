@@ -10,7 +10,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbox from './components/Chatbox';
 import Registered from './pages/Registered';
-
+import Login from './pages/Login'; 
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/registered" element={<Registered />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Chatbox />
       <Footer />

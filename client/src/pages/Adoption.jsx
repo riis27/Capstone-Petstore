@@ -19,8 +19,7 @@ const PetBox = ({ pet, onVote }) => {
 
       {expanded && (
         <div className="pet-info">
-          <p><strong>Breed:</strong> {pet.breed || 'N/A'}</p>
-          <p><strong>Sex:</strong> {pet.sex || 'N/A'}</p>
+          <p><strong>Breed:</strong> {pet.breed || 'N/A'} <strong>Sex:</strong> {pet.sex || 'N/A'}</p>
           <p><strong>Disposition:</strong> {pet.disposition || 'N/A'}</p>
           <p><strong>Traits:</strong> {pet.traits || 'N/A'}</p>
           <p><strong>Votes:</strong> {pet.votes ?? 0}</p>
@@ -46,17 +45,23 @@ const PetBox = ({ pet, onVote }) => {
 
 const Adoption = () => {
   const [pets, setPets] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ loading state
+  const [error, setError] = useState(null);     // ✅ error state
 
-  // Fetch pets from the backend
+  // Fetch pets from backend
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const res = await fetch('/api/pets');
+        const res = await fetch('http://localhost:2727/pets');
+        if (!res.ok) throw new Error('Failed to fetch pets');
         const data = await res.json();
-        console.log('🐾 Pets fetched:', data); // Optional debug log
+        console.log('🐾 Pets fetched from backend:', data);
         setPets(data);
+        setLoading(false);
       } catch (err) {
         console.error('❌ Failed to fetch pets:', err);
+        setError('Unable to load pets. Please try again later.');
+        setLoading(false);
       }
     };
 
@@ -75,7 +80,6 @@ const Adoption = () => {
       });
 
       const data = await res.json();
-
       const updatedPets = pets.map((pet) =>
         pet._id === petId ? { ...pet, votes: data.votes } : pet
       );
@@ -85,7 +89,7 @@ const Adoption = () => {
     }
   };
 
-  // Handle adding a pet (for future admin use)
+  // Handle adding a pet (for admin use)
   const handleAddPet = async (newPet) => {
     const token = localStorage.getItem('authToken');
     const response = await fetch('/api/pets/add', {
@@ -99,7 +103,7 @@ const Adoption = () => {
 
     if (response.ok) {
       alert('✅ Pet added successfully');
-      const res = await fetch('/api/pets');
+      const res = await fetch('/pets');
       const data = await res.json();
       setPets(data);
     } else {
@@ -110,15 +114,20 @@ const Adoption = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Meet Our Adorable Adoptables</h1>
-      <div className="pet-container">
-        {pets.length === 0 ? (
-          <p className="text-center">No pets available right now.</p>
-        ) : (
-          pets.map((pet) => (
+
+      {loading ? (
+        <p className="text-center">🐾 Loading pets...</p>
+      ) : error ? (
+        <p className="text-danger text-center">{error}</p>
+      ) : pets.length === 0 ? (
+        <p className="text-center">No pets available right now.</p>
+      ) : (
+        <div className="pet-container">
+          {pets.map((pet) => (
             <PetBox key={pet._id} pet={pet} onVote={handleVote} />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // routes/pets.js
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import Pet from '../models/Pet.js'; 
+const express = require( 'express')
+const jwt = require( 'jsonwebtoken')
+const Pet = require( '../models/Pet.js')
 
 const router = express.Router();
 
@@ -17,7 +17,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-// ✅ POST /api/pets/add — Add new pet
+// ✅ POST /api/pets/add — Add new pet (PRIVATE)
 router.post('/add', verifyToken, async (req, res) => {
   try {
     const { name, age, breed, sex, disposition, traits, image } = req.body;
@@ -35,29 +35,26 @@ router.post('/add', verifyToken, async (req, res) => {
       traits,
       image,
       votes: 0,
-      user: req.user.id
     });
 
     const savedPet = await newPet.save();
     res.status(201).json(savedPet);
   } catch (err) {
-    console.error("Error adding pet:", err);
     res.status(500).json({ message: "Server error while adding pet" });
   }
 });
 
-// ✅ GET /api/pets — Fetch all pets
+// ✅ GET /api/pets — Fetch all pets (PUBLIC)
 router.get('/', async (req, res) => {
   try {
     const pets = await Pet.find().sort({ createdAt: -1 });
     res.status(200).json(pets);
   } catch (err) {
-    console.error("Error fetching pets:", err);
     res.status(500).json({ message: "Failed to retrieve pets" });
   }
 });
 
-// ✅ PATCH /api/pets/:id/vote — Upvote/downvote a pet
+// ✅ PATCH /api/pets/:id/vote — Upvote/downvote (PUBLIC)
 router.patch('/:id/vote', async (req, res) => {
   const { voteType } = req.body;
 
@@ -71,7 +68,6 @@ router.patch('/:id/vote', async (req, res) => {
     await pet.save();
     res.status(200).json({ message: "Vote updated", votes: pet.votes });
   } catch (err) {
-    console.error("Error updating vote:", err);
     res.status(500).json({ message: "Error updating vote", error: err });
   }
 });

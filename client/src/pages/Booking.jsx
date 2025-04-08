@@ -1,3 +1,4 @@
+// Booking.jsx
 import React, { useState, useEffect } from "react";
 import "../styles/Booking.css";
 import Calendar from "../components/Calendar";

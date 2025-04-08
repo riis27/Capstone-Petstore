@@ -1,4 +1,4 @@
-/* General Styling */
+/* App.css */
 
 html,
 body 
@@ -21,9 +21,7 @@ p {
     font-size: 1.3rem;
 }
 
-  /* ─────────────────────────────── */
-  /* ✅ Responsive Adjustments       */
-  /* ─────────────────────────────── */
+
   
 /* XS Phone */
 @media (min-width: 300px) and (max-width: 430px) {

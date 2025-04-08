@@ -1,24 +1,11 @@
 /* Adoption Page Style */
 .pet-container {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    grid-template-columns: 1fr; /* Default: mobile */
-  }
-  
-  /* Tablet: 2 columns */
-  @media (min-width: 768px) {
-    .pet-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  /* Desktop: 3 columns */
-  @media (min-width: 1024px) {
-    .pet-container {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+   
 
 /* Font Styles  */
 h1 {
@@ -57,12 +44,12 @@ p {
     margin-bottom: 10px;
   }
   
-  .pet-box h3 {
-    display: flex;
-    justify-content: space-between;
-    font-size: larger;
-    font-weight: bold;
-    align-items: center;
+  .pet-box {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
   .pet-box h3 span.age {
@@ -73,8 +60,10 @@ p {
   }
   
   .pet-info {
-    display: none;
-    margin-top: 10px;
+    margin-top: 1rem;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 1rem;
   }
   
   .pet-info p {
@@ -86,7 +75,7 @@ p {
   }
   
   .expand-button {
-    margin-top: auto;
+    margin-top: 0.5rem;
   }
   
 
@@ -100,4 +89,19 @@ p {
 .vote-buttons button {
   min-width: 100px;
   font-weight: bold;
+}
+
+
+ /* Tablet: 2 columns */
+ @media (min-width: 768px) {
+  .pet-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .pet-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

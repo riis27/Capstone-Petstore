@@ -58,11 +58,12 @@ const Contact = () => {
         </div>
 
         <div className="form-container">
-          <h1>Contact Me</h1>
+          <h1>Contact Us</h1>
           <h2>
-            Are you interested in working together?
+            Here at Pawsh, we strive for high quality and connection. Whether it's a question about our adoption process, our partners or something else, we are here to help.
             <br />
-            Do you have any questions or just want to say hi?
+            <br />
+            We'd love to hear from you!
           </h2>
           <form onSubmit={handleSubmit}>
             <input
