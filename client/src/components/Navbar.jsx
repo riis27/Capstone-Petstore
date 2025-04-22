@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { decodeToken } from '../utils/decodeToken'; // Adjust path if needed
+import { decodeToken } from '../utils/decodeToken';
 import { Link, useNavigate } from 'react-router-dom';
-import "../styles/Navbar.css";
+import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -16,55 +16,72 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('userInfo');
     setUser(null);
-    navigate('/'); // optional: redirect to home
+    navigate('/');
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-light benne-font">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/">
-          <img src="/logo.jpeg" alt="Pawsh Logo" className="navbar-image" />
-        </a>
+    <nav className="navbar navbar-expand-md navbar-light benne-font custom-navbar">
+      <div className="container-fluid d-flex align-items-center justify-content-between">
+
+        {/* Logo */}
+        <Link className="navbar-brand" to="/">
+          <img src="/assets/pawsh-logo.png" alt="Pawsh Logo" className="navbar-image" />
+        </Link>
+
+        {/* Hamburger for small screens */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler d-md-none ms-auto"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarLinks"
+          aria-controls="navbarLinks"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav libre-font">
+
+        {/* Nav links */}
+        <div className="collapse navbar-collapse justify-content-end dropdown-nav-wrapper" id="navbarLinks">
+          <ul className="navbar-nav text-end">
             <li className="nav-item">
-              <a className="nav-link" href="/about">Our Mission</a>
+              <Link className="nav-link" to="/home">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/adoption">Adoption</a>
+              <Link className="nav-link" to="/about">Our Mission</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/services">Services</a>
+              <Link className="nav-link" to="/adoption">Adoption</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/faqs">FAQs</a>
+              <Link className="nav-link" to="/services">Services</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/booking">Booking</a>
+              <Link className="nav-link" to="/faqs">FAQs</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact">Contact</a>
+              <Link className="nav-link" to="/booking">Booking</Link>
             </li>
-            {user ? (
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">Contact</Link>
+            </li>
+
+            {user?.isAdmin && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-pet">Add Pet</Link>
+              </li>
+            )}
+
+            {user?.isAdmin ? (
               <>
-                <li className="nav-item nav-link text-muted">
-                  👋 Welcome, {user.email}
+                <li className="nav-item nav-link text-muted benne-font">
+                  {user.email.split('@')[0]}
                 </li>
                 <li className="nav-item">
                   <button
-                    className="btn btn-sm btn-outline-secondary ms-2"
+                    className="logout-button"
                     onClick={handleLogout}
                   >
                     Logout

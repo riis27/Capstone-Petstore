@@ -9,9 +9,9 @@
     "server": "nodemon ./server/server.js"
   },
   "dependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "react-icons": "^5.5.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/riis27/Capstone-Petstore.git"
@@ -22,5 +22,12 @@
   "homepage": "https://github.com/riis27/Capstone-Petstore#readme",
   "author": "Rissa Iquina",
   "license": "ISC",
-  "keywords": ["mern", "react", "express", "mongodb", "capstone", "petstore"]
+  "keywords": [
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "capstone",
+    "petstore"
+  ]
 }

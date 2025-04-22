@@ -4,12 +4,12 @@ import '../styles/FAQs.css';
 
 const FAQImages = [
   {
-    src: 'https://images.unsplash.com/photo-1534958210670-31215027cb02?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fHZldGVyaW5hcmlhbnxlbnwwfDB8MHx8fDI%3D',
+    src: 'https://images.unsplash.com/photo-1547960450-2ea08b931270?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     headline: 'Frequently Asked Questions',
     subtitle: 'Answers that help you feel confident, cared for, and informed.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1606678109477-07cba6847604?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxfHx8ZW58MHx8fHx8',
+    src: 'https://images.unsplash.com/photo-1534958210670-31215027cb02?q=80&w=1051&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     headline: 'Everything You Need to Know',
     subtitle: 'From services to adoption—we’ve got you covered.',
   },
@@ -69,7 +69,7 @@ const FAQs = () => {
         },
         {
           q: 'How long does it take to receive the edited photos?',
-          a: 'The turnaround time for edited photos is typically 1–2 weeks, depending on the volume of photos and the complexity of editing.',
+          a: 'The turnaround time for edited photos is typically 1-2 weeks, depending on the volume of photos and the complexity of editing.',
         },
       ],
     },
@@ -83,7 +83,7 @@ const FAQs = () => {
         <img src={FAQImages[currentImage].src} alt="FAQ Banner" className="faqs-img" />
         <div className="faqs-overlay"></div>
         <div className="faqs-content">
-          <h1 className="faqs-title">{FAQImages[currentImage].headline}</h1>
+          <h2 className="faqs-title">{FAQImages[currentImage].headline}</h2>
           <p className="faqs-subtitle">{FAQImages[currentImage].subtitle}</p>
         </div>
       </div>
@@ -92,7 +92,7 @@ const FAQs = () => {
       <div className="faq-info">
         {faqs.map((section, i) => (
           <div key={i} className="faq-content">
-            <h3>{section.category}</h3>
+            <h3 className="faqs-header">{section.category}</h3>
             {section.questions.map((faq, j) => {
               const index = `${i}-${j}`;
               return (

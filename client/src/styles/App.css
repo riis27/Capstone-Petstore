@@ -1,28 +1,71 @@
 /* App.css */
 
+/*  Root Styles  */
 html,
-body 
+body,
 #root {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Benne", serif;
     margin: 0;
-    padding-bottom: 0px;
+    color: #333;
     text-align: center;
-    min-height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1707209856575-a80b9dff5524?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+body {
+    padding-bottom: 0px;
+    background-image: url("https://images.unsplash.com/photo-1713558014346-ceddc512a616?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-repeat: no-repeat;
-    color: #333;
+    background-attachment: fixed;
+}
+
+/* .page-wrapper, .main-page, .page, .booking-page, .about-page, .home-page {
+    opacity: 1 !important;
+    z-index: 1;
+  } */
+
+/*  Font Style  */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Castoro Titling", serif;
+    font-weight: bolder;
+    padding: 2px;
+
 }
 
 p {
     font-size: 1.3rem;
+    line-height: 1.1;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: "Benne", serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-size: 0.95rem;
+    color: #888;
 }
 
 
-  
+
+/*  Media Queries  */
+
 /* XS Phone */
 @media (min-width: 300px) and (max-width: 430px) {
     .featured-pet details {
@@ -62,7 +105,6 @@ p {
         font-size: 1.5em;
     }
 
-
     .adoption,
     .details,
     .stories,
@@ -98,19 +140,15 @@ p {
         height: 50px;
     }
 
-
     #contact-container {
         height: 80vh;
         width: 80vw;
         align-self: center;
-
     }
 }
 
-
 /* Phone */
 @media (max-width: 767px) {
-
     .pet-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -136,88 +174,9 @@ p {
         font-size: 1.5em;
     }
 
-
-
     #contact-container {
         height: 80vh;
         width: 80vw;
         align-self: center;
-    }
-
-}
-
-
-
-/* Tablet and Desktop */
-@media (min-width: 768px) {
-
-    .pet-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        /* Responsive columns */
-        grid-template-rows: auto;
-        grid-gap: 20px;
-    }
-
-    .pet-box {
-        padding: 20px;
-        font-size: 0.9em;
-        margin: 10px;
-    }
-
-    .pet-box img {
-        margin-bottom: 10px;
-    }
-
-    .pet-box h3 span.age {
-        margin: 15px;
-        font-size: 0.7em;
-    }
-
-    .pet-box h3 {
-        font-size: 1.5em;
-    }
-
-
-}
-
-
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1180px) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on tablets */
-        flex: 1;
-        padding: 20px;
-    }
-
-    .featured-pet .image-block img {
-        height: 350px;
-    }
-}
-
-@media (min-width: 1024px) {
-
-    /* Desktop and larger */
-    main {
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 columns on larger screens */
-        flex: 1;
-        padding: 20px;
-    }
-
-    .featured-pet .image-block img {
-        height: 400px;
-    }
-
-    #contact-container {
-        display: block;
-        flex: 1;
-        align-items: left !important;
-        height: 80vh;
-
-
-
-
     }
 }

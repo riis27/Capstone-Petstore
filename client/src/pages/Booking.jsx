@@ -34,7 +34,7 @@ const Booking = () => {
           />
           <div className="banner-overlay" />
           <div className="banner-content">
-            <h3 className="banner-title">Booking</h3>
+            <h3 className="banner-title">Memories in the Making</h3>
           </div>
         </section>
 
@@ -42,19 +42,15 @@ const Booking = () => {
           <div className="row">
             <div className="col-lg-5 col-md-5 mb-4">
             <br></br>
-              <h3>Reservation</h3>
+              <h3>Our Schedule</h3>
               <p>
-                Aenean diam lectus, porta ut quam ut, ultricies venenatis quam. Ut
-                consectetur, dolor a imperdiet varius, purus nunc convallis nisl,
-                eget pretium est tortor vel urna.
+              Our in-studio photographers are hand-selected with our aesthetic in mind, but we are also in contact with freelance photographers who may align with your personality and character better!
               </p>
               <p>
-                Sed metus ac nisi maximus lacinia quis non augue. Phasellus
-                condimentum hendrerit nibh, et placerat lacus suscipit quis.
+              Due to high volume, we suggest placing a reservation with our talented photographers as they book quickly. A one-time fee allows you to choose from a range of dates, should you need to cancel for any unforeseen reason.
               </p>
-              <a href="/contact" className="btn btn-outline-dark">
-                Book Now
-              </a>
+              <br />
+              <a href="/contact" className="booking-button">Book Now</a>
             </div>
             <div className="col-lg-7 col-md-7">
               <Calendar />
@@ -64,8 +60,8 @@ const Booking = () => {
 
         <section className="photo-project-section">
           <div className="container text-center py-5">
-            <h3>Ready to start a new photo project with Us?</h3>
-            <a href="/contact" className="btn btn-dark mt-3">
+            <h2 className="ready-title">Ready to start a new photo project with Us?</h2>
+            <a href="/contact" className="ready-button">
               I'm ready!
             </a>
           </div>

@@ -1,0 +1,40 @@
+/* AddPet.css */
+.addpet-container {
+    max-width: 600px;
+    color: rgb(120, 104, 104);
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgb(255, 255, 255, .8);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(117, 92, 92, 0.1);
+    flex: 1;
+  }
+  
+  .addpet-form input {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .addpet-form button {
+    align-self: center;
+    font-family: "Castoro Titling", serif;
+    padding: 0.5rem 2rem; 
+    border: 1px solid #a59898;
+    background-color: transparent;
+    color: rgb(121, 105, 105);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    margin: 10px auto; 
+    text-decoration: none;
+    display: inline-block; 
+  }
+
+  .addpet-form button:hover {
+    background-color: #bbaeae;
+    color: #fff;
+}
+  

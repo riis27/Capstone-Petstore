@@ -1,3 +1,7 @@
+/* Contact.css */
+
+
+
 .contact-page {
   display: flex;
   flex-direction: row;
@@ -22,9 +26,14 @@
 }
 
 
+/* Form Styles */
+.h3 {
+  font-size: x-small;
+}
 
-.form-container {
+.contact-container {
   flex: 1;
+  color: rgb(127, 110, 110);
   background-color: rgba(255, 255, 255, 0.85);
   display: flex;
   flex-direction: column;
@@ -33,12 +42,12 @@
   text-align: left;
 }
 
-.form-container h5 {
-  font-size: 1.2rem;
-  color: #333;
+.contact-container h1 {
+  font-size: 2.5rem;
+  color: rgb(127, 110, 110);
 }
 
-.form-container h2 {
+.contact-container h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
@@ -60,18 +69,24 @@ form textarea:focus {
 }
 
 form button {
-  background-color: rgb(185, 140, 150);
-  color: white;
-  padding: 10px 40px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  cursor: pointer;
+  align-self: center;
+  font-family: "Castoro Titling", serif;
+  padding: 0.5rem 2rem; 
+  border: 1px solid #a59898;
+  background-color: transparent;
+  color: rgb(121, 105, 105);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  margin: 10px auto; 
+  text-decoration: none;
+  display: inline-block; 
 }
 
 form button:hover {
-  background-color: #444;
-}
+  background-color: #bbaeae;
+    color: #fff;
+  }
 
 /* Responsive Fixes */
 @media (max-width: 768px) {

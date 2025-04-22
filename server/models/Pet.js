@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+// models/Pet.js
+const mongoose = require('mongoose');
 
 const petSchema = new mongoose.Schema({
   name: String,
@@ -10,13 +11,9 @@ const petSchema = new mongoose.Schema({
   image: String,
   votes: {
     type: Number,
-    default: 0
+    default: 0,
   },
-  // user: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User'
-  // }
 }, { timestamps: true });
 
 const Pet = mongoose.model('Pet', petSchema);
-export default Pet;
+module.exports = Pet;

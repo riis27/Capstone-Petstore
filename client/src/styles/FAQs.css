@@ -1,149 +1,161 @@
 .faqs-wrapper {
-    font-family: "Castoro Titling", serif;
-    color: #222;
-    text-align: center;
-  }
-  
-  .faqs-section {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-  }
-  
-  .faqs-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .faqs-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+  font-family: "Castoro Titling", serif;
+  color: #222;
+  text-align: center;
+}
+
+.faqs-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.faqs-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faqs-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.faq-content {
+  padding: 40px;
+}
+
+.faqs-content {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  padding: 0 20px; /* Adjusted padding */
+  width: 80%; /* Added width */
+}
+
+.faqs-title {
+  font-size: 3rem;
+  font-weight: lighter;
+  font-family: "Waterfall", cursive;
+  color: white;
+  word-wrap: break-word; 
+  position: relative;
+  text-align: center;
+}
+
+.faqs-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  word-wrap: break-word; /
+}
+
+/* FAQ Items */
+.faqs-header {
+  color:white;
+
+}
+.faq-item {
+  background-color: #faf7f7;
+  border: 1px solid #e3dddd;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(61, 48, 54, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background-color: #ece6e0;
+}
+
+.faq-question {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(120, 104, 104);
+
+}
+
+.faq-answer {
+  font-size: 1.1rem;
+  color: rgb(120, 104, 104);
+  padding: 10px;
+  text-align: left;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #413434;
+}
+
+
+
+/* Mobile Responsive */
+@media (min-width: 200px) and (max-width: 430px) {
+  .faqs-content {
+    top: 75%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    padding: 0 10px; 
   }
 
-  .faq-content {
-    padding: 40px;
-  }
-  
-  .faqs-content {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    padding: 0 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
   .faqs-title {
-    font-size: 4rem;
-    font-weight: lighter;
-    font-family: "Kaushan Script", cursive;
+    font-size: 3.9rem;
   }
-  
+
+  .faqs-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 500px) and (max-width: 1023px) {
+  .faqs-section {
+    height: 30vh;
+  }
+
+  .faqs-content {
+    top: 60%;
+    width: 90%; 
+    padding: 0 15px; 
+  }
+
+  .faqs-title {
+    font-size: 3.5rem;
+  }
+
+  .faqs-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024x) and (max-width: 1440px) {
+  .faqs-title {
+    font-size: 4.5rem;
+  }
+
+  .faqs-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* XL – Desktops and 4K Screens */
+@media (min-width: 1441px) {
+  .faqs-title {
+    font-size: 4.5rem;
+  }
+
   .faqs-subtitle {
     font-size: 1.5rem;
-    font-weight: 300;
   }
-  
-  /* FAQ Items */
-  .faq-item {
-    background-color: #fefefe;
-    border: 1px solid #e6e6fa;
-    border-radius: 12px;
-    padding: 20px 25px;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.1);
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .faq-item:hover {
-    background-color: #f9f9ff;
-  }
-  
-  .faq-question {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
-  .faq-answer {
-    font-size: 0.9rem;
-    color: #444;
-  }
-  
-  .arrow {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #6c63ff;
-  }
-  
-  /* ─────────────────────────────── */
-  /* ✅ Responsive Adjustments       */
-  /* ─────────────────────────────── */
-  
-  /* S - Phones (330px–767px) */
-  @media (min-width: 200px) and (max-width: 430px) {
-    .faqs-content {
-      top: 85%;
-      transform: translate(-50%, -50%);
-    }
-  
-    .faqs-title {
-      font-size: 1.7rem;
-    }
-  
-    .faqs-subtitle {
-      font-size: 0.9rem;
-    }
-  }
-  
-  /* M – Tablets / Small Laptops (768px–1024px) */
-  @media (min-width: 53px) and (max-width: 1024px) {
-    .faqs-section {
-      height: 50vh;
-    }
-  
-    .faqs-content {
-      top: 80%;
-    }
-  
-    .faqs-title {
-      font-size: 2.5rem;
-    }
-  
-    .faqs-subtitle {
-      font-size: 1.2rem;
-    }
-  }
-  
-  /* L – Large screens (1025px–1440px) */
-  @media (min-width: 1025px) and (max-width: 1440px) {
-    .faqs-title {
-      font-size: 3.5rem;
-    }
-  
-    .faqs-subtitle {
-      font-size: 1.3rem;
-    }
-  }
-  
-  /* XL – Desktops and 4K Screens */
-  @media (min-width: 1441px) {
-    .faqs-title {
-      font-size: 4.5rem;
-    }
-  
-    .faqs-subtitle {
-      font-size: 1.5rem;
-    }
-  }
-  
+}

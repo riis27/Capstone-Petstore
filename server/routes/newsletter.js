@@ -1,17 +1,35 @@
-//newsletter.js
-import express from "express";
-import Newsletter from "../models/Newsletter.js"; // define schema separately
+const express = require('express');
 const router = express.Router();
+const Newsletter = require('../models/Newsletter');
 
-router.post("/", async (req, res) => {
+// POST /api/newsletter
+router.post('/', async (req, res) => {
+  const { email } = req.body;
+
+  if (!email || typeof email !== 'string') {
+    return res.status(400).json({ message: 'Please provide a valid email address.' });
+  }
+
   try {
-    const { email } = req.body;
-    const newEntry = new Newsletter({ email });
+    const emailFormatted = email.toLowerCase().trim();
+    const existing = await Newsletter.findOne({ email: emailFormatted });
+    
+    if (existing) {
+      return res.status(409).json({ message: 'This email is already subscribed.' });
+    }
+
+    const newEntry = new Newsletter({ email: emailFormatted });
     await newEntry.save();
-    res.status(201).json({ message: "Subscribed successfully" });
+
+    return res.status(201).json({ message: 'Thank you for subscribing!' });
   } catch (err) {
-    res.status(500).json({ message: "Error subscribing", error: err.message });
+    console.error('[Newsletter POST Error]', err);
+    // Enhanced Error Feedback
+    return res.status(500).json({ 
+      message: 'Server error: could not subscribe user.', 
+      error: err.message 
+    });
   }
 });
 
-export default router;
+module.exports = router;

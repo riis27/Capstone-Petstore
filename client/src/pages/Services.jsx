@@ -1,20 +1,20 @@
 // Services.jsx
 import React, { useState } from 'react';
-import '../styles/App.css';
+import '../styles/Services.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const servicePackages = [
   {
     title: 'Welcome Package',
-    image: 'https://images.pexels.com/photos/20607811/pexels-photo-20607811/free-photo-of-couple-expecting-a-baby-posing-in-a-studio-with-a-dog.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.unsplash.com/photo-1721904309410-ca4cd5ed681e?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: '15min, 3 prints, custom tag',
     price: '$150',
     description: 'Our welcome package is specially priced to capture your first professional photos with your adopted pet! Choose a custom tag from our collection, and we add the names and details of your newest family member for you while you snap photos. Welcome to the Pawsh family!'
   },
   {
     title: 'Birthday Session',
-    image: 'https://images.pexels.com/photos/27176120/pexels-photo-27176120/free-photo-of-a-couple-wearing-party-hats-celebrating-their-dogs-birthday.jpeg?auto=compress&cs=tinysrgb&w=400',
-    name: '15min, 10 prints, 1 smash cake',
+    image: 'https://images.unsplash.com/photo-1662441899435-8bdee58218cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: '20min, 10 prints, 1 smash cake',
     price: '$300',
     description: "Whether it's yours, your fur family, or someone's birthday, this festive photoshoot comes with a pet-friendly 6 inch smash cake made by our local Pet Bakery for your pet to make an adorable mess of!"
   },
@@ -22,12 +22,12 @@ const servicePackages = [
     title: 'Family & Friends',
     image: 'https://images.unsplash.com/photo-1526363269865-60998e11d82d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmFtaWx5JTIwd2l0aCUyMHBldHxlbnwwfDB8MHx8fDI%3D',
     name: '30min, 10 prints, unlimited family',
-    price: '$350',
+    price: '$400',
     description: 'Includes everything in the Welcome Package with as many family members, and family photos you want in a 30 minute session!'
   },
   {
     title: 'Paws & Prints',
-    image: 'https://images.pexels.com/photos/7788657/pexels-photo-7788657.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.unsplash.com/photo-1621567389899-2c49bbce3636?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     name: '45min, Paw Plaque, 8x8 album',
     price: '$450',
     description: 'You and your family will cherish the beautiful memories made in this 45 minute session, which comes with a special "Paw Plaque" of your pet paws, an accessory/toy of your choice, and 20 prints in a 6x6 album.'
@@ -48,6 +48,7 @@ const servicePackages = [
   }
 ];
 
+
 const Services = () => {
   const [expanded, setExpanded] = useState(null);
 
@@ -56,30 +57,38 @@ const Services = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Our Service Packages</h1>
+    <div className="services-wrapper container py-5">
+      <div className="text-center mb-5">
+        <h1 className="services-title">Our Photography Packages</h1>
+        <p className="services-subtitle">Thoughtfully curated to celebrate all the different milestones with your new fur family! Please contact us directly to inquire about custom or travel packages.</p>
+      </div>
       <div className="row g-4">
         {servicePackages.map((service, index) => (
-          <div key={index} className="col-12 col-md-6 col-lg-4">
-            <div className="card h-100 shadow-sm p-3" style={{ backgroundColor: 'rgba(255,255,255,0.85)', borderRadius: '10px', transition: 'transform 0.3s' }}>
+          <div key={index} className="col-12 col-md-6 col-lg-4 d-flex">
+            <div
+              className={`service-card-container flex-fill ${expanded === index ? 'expanded' : ''}`}
+              onClick={() => toggleDescription(index)}
+            >
               <img
                 src={service.image}
-                className="card-img-top mb-3"
+                className="service-image"
                 alt={service.title}
-                style={{ borderRadius: '10px', height: '200px', objectFit: 'cover' }}
               />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title fw-bold">{service.title}</h5>
-                <p className="mb-1"><strong>{service.name}</strong></p>
-                <p className="mb-2" style={{ fontSize: '1.2em', fontWeight: 'bold' }}>{service.price}</p>
+              <div className="service-body">
+                <h5 className="service-title">{service.title}</h5>
+                <p className="service-name">{service.name}</p>
+                <p className="service-price">{service.price}</p>
                 {expanded === index && (
-                  <p className="card-text mt-2">{service.description}</p>
+                  <p className="service-description">{service.description}</p>
                 )}
                 <button
-                  className="btn btn-outline-dark mt-auto"
-                  onClick={() => toggleDescription(index)}
+                  className="service-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleDescription(index);
+                  }}
                 >
-                  {expanded === index ? 'See Less' : 'See More'}
+                  {expanded === index ? 'Hide' : 'Details'}
                 </button>
               </div>
             </div>

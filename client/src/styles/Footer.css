@@ -1,109 +1,134 @@
-/* Footer Styling */
+/* Footer.css */
 
 .footer {
-    background-color: #5a5050;
-    color: white;
-    padding: 40px 20px 10px;
+  background-color: #5a5050;
+  color: white;
+  padding: 20px 20px 5px;
+  width: 100%;
+  font-family: "Benne", serif;
+  box-sizing: border-box;
+  opacity: 81%;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-title {
+  font-family: "Licorice", cursive;
+  font-weight: 100;
+  font-size: 2rem;
+  text-align: left;
+  line-height: 85%;
+}
+
+.footer-column p {
+  font-size: .8rem;
+  margin: 5px 0;
+  font-family: "Benne", serif;
+  text-align: left;
+}
+
+.subscribe-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.subscribe-text {
+  font-family: "Benne", serif;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-align-last: right;
+}
+
+.footer-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  align-items: center; 
+  justify-content: flex-end;
+}
+
+.footer-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-family: "Benne", serif;
+  flex: 1;
+  min-width: 200px;
+  box-sizing: border-box;
+  line-height: normal;
+  vertical-align: middle;
+  margin-top: 20px; /* Added top margin */
+}
+
+.footer-button {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  padding: 7px 25px;
+  font-weight: bolder;
+  font-size: 1rem;
+  font-family: "Castoro Titling", serif;  border: 1px auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: auto;
+  line-height: normal;
+  box-sizing: border-box;
+  vertical-align: middle;
+ }
+
+.footer-button:hover {
+  background-color: rgb(190, 174, 174);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Benne", serif;
+  color: #ccc;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .footer-form {
     width: 100%;
-    font-family: "Benne", serif;
-    box-sizing: border-box;
   }
-  
-  .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer-column {
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-title {
-    font-family: "Castoro Titling", serif;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  
-  .footer-column p {
-    font-size: 1rem;
-    margin: 5px 0;
-    font-family: "Benne", serif;
-    text-align: left;
-  }
-  
-  .footer-subscribe-title {
-    font-family: "Castoro Titling", serif;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    text-align: right;
-  }
-  
-  .footer-subscribe-text {
-    font-family: "Benne", serif;
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    text-align: right;
-  }
-  
-  .footer form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
+
   .footer-input {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    font-size: 1rem;
-    font-family: "Benne", serif;
-    flex: 1;
-    min-width: 200px;
+    min-width: 150px;
   }
-  
-  .footer-button {
-    background-color: rgb(175, 165, 170);
-    border-radius: 10px;
-    padding: 10px 25px; 
-    font-weight: bolder;
-    font-size: 1rem; 
-    font-family: "Benne", serif;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    height: 100%; /* ensures it fills flex height */
+
+
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
   }
-  
-  
-  .footer-button:hover {
-    background-color: rgb(185, 140, 150);
+
+  .footer-column {
+    min-width: 100%;
   }
+
   
-  .footer-bottom {
-    text-align: center;
-    font-size: 0.9rem;
-    font-family: "Benne", serif;
-    color: #ccc;
+   .footer-form {
+     justify-content: flex-start;
   }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      gap: 20px;
-    }
-  
-    .footer form {
-      flex-direction: column;
-    }
-  
-    .footer-input {
-      min-width: 100%;
-    }
-  }
-  
+}

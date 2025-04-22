@@ -1,3 +1,6 @@
+//App.jsx
+
+// Imports
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -8,16 +11,20 @@ import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Chatbox from './components/Chatbox';
+// import Chatbox from './components/Chatbox';
 import Registered from './pages/Registered';
 import Login from './pages/Login'; 
+import AddPet from './pages/AddPet';
+import Landing from './pages/Landing';
+import Subscribed from './pages/Subscribed';
+
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/adoption" element={<Adoption />} />
         <Route path="/services" element={<Services />} />
@@ -26,8 +33,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/registered" element={<Registered />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/add-pet" element={<AddPet />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/Subscribed" element={<Subscribed />} />
       </Routes>
-      <Chatbox />
+      {/* <Chatbox /> */}
       <Footer />
     </Router>
   );

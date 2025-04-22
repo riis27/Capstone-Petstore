@@ -1,16 +1,30 @@
-/* Adoption Page Style */
+/* Adoption.css */
 .pet-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  color: rgb(120, 104, 104);
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
 }
-   
 
-/* Font Styles  */
-h1 {
-  font-family: "Castoro Titling", serif;
+@media (min-width: 768px) {
+  .pet-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+@media (min-width: 992px) {
+  .pet-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.adoption-title {
+  font-family: "Castoro Titling", serif;
+  color: white;
+}
+
 h5 {
   font-family: "Castoro Titling", serif;
 }
@@ -19,89 +33,221 @@ p {
   font-family: "Benne", serif;
 }
 
-  .pet-box {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pet-box:hover {
-    transform: scale(1.05);
-  }
-  
-  .pet-box img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .pet-box {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 1rem;
-    width: 280px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .pet-box h3 span.age {
-    font-size: 0.7em;
-    font-weight: normal;
-    color: #777;
-    margin-left: 15px;
-  }
-  
-  .pet-info {
-    margin-top: 1rem;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 1rem;
-  }
-  
-  .pet-info p {
-    margin-bottom: 5px;
-  }
-  
-  .pet-info strong {
-    font-weight: bold;
-  }
-  
-  .expand-button {
-    margin-top: 0.5rem;
-  }
-  
-
-/* Vote button style  */
-.vote-buttons {
+.pet-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(120, 104, 104);
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
   display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  flex-direction: column;
+  padding: 10px;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.vote-buttons button {
-  min-width: 100px;
+.pet-box:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pet-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.pet-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.pet-info p {
+  font-size: 0.95rem;
+  color: rgb(127, 110, 110);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.pet-info strong {
   font-weight: bold;
 }
 
+.pet-button,
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button {
+  width: 90%;
+  max-width: 100px;
+  text-align: center;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  border: 1px solid;
+  color: white;
+  display: block;
+  margin: 0.4rem auto;
+  box-sizing: border-box;
+}
 
- /* Tablet: 2 columns */
- @media (min-width: 768px) {
-  .pet-container {
-    grid-template-columns: repeat(2, 1fr);
+.pet-button {
+  align-self: center;
+  font-family: "Castoro Titling", serif;
+  padding: 0.5rem 1.2rem;
+  border: .5px solid #cdaaaa;
+  background-color: transparent;
+  color: #987575;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.pet-button:hover {
+  background-color: rgba(158, 128, 128, 0.5);
+  color: white;
+}
+
+.edit-form input,
+.edit-form textarea {
+  margin: 0.5rem auto;
+  padding: 1rem 0.6rem;
+  width: 90%;
+  border: 1px solid #e4d9c2;
+  border-radius: 8px;
+  font-family: "Benne", serif;
+  font-size: 0.95rem;
+  background-color: #c9b79d;
+  color: white;
+  display: block;
+}
+
+.edit-form input:first-of-type,
+.edit-form textarea:first-of-type {
+  margin-top: 1rem;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .edit-buttons {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
-/* Desktop: 3 columns */
-@media (min-width: 1024px) {
-  .pet-container {
-    grid-template-columns: repeat(3, 1fr);
+.save-cancel-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.edit-button,
+.delete-button {
+  width: 90%;
+  max-width: 280px;
+  text-align: center;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  border: 1px solid;
+  color: white;
+  display: block;
+  margin: 0.4rem auto;
+  box-sizing: border-box;
+}
+
+.edit-button {
+  background-color: #bbaaaa;
+  border-color: #c0a5a5;
+}
+
+.edit-button:hover {
+  background-color: #a48787;
+}
+
+.delete-button {
+  background-color: #e8c0c0;
+  border-color: #e6b6b6;
+}
+
+.delete-button:hover {
+  background-color: #c46969;
+}
+
+.save-button {
+  background-color: #cbe8c0;
+  border-color: #c6e4cc;
+}
+
+.save-button:hover {
+  background-color: #9cc088;
+}
+
+.cancel-button {
+  background-color: #dfc8c8;
+  border-color: #d89c9c;
+}
+
+.cancel-button:hover {
+  background-color: #d29595;
+}
+
+@media (max-width: 767px) {
+  .pet-box h3 {
+    font-size: 1.15rem;
+  }
+
+  .pet-info p {
+    font-size: 0.9rem;
+  }
+
+  .edit-buttons {
+    flex-direction: column !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .pet-box h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .pet-info p {
+    font-size: 1rem;
   }
 }

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Footer.css";
+import BACKEND_URL from "../config";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -10,18 +11,21 @@ const Footer = () => {
   const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/newsletter", {
+      const res = await fetch(BACKEND_URL + "api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
+  
       if (res.ok) {
         navigate("/subscribed");
       } else {
-        alert("Failed to subscribe. Try again.");
+        const data = await res.json();
+        alert(data.message || "Failed to subscribe. Try again.");
       }
     } catch (err) {
       console.error(err);
+      alert("An unexpected error occurred. Please try again.");
     }
   };
 
@@ -36,11 +40,15 @@ const Footer = () => {
         </div>
 
         <div className="footer-column subscribe">
-          <h2 className="footer-subscribe-title">🐾 Subscribe to our Pawsh Press</h2>
-          <p className="footer-subscribe-text">Receive 10% off our services + be the first to know about our newest friends!</p>
+
+          <h2 className="subscribe-title">Subscribe to our Pawsh Press</h2>
+          <p className="subscribe-text">New subscribers receive 10% off oue services!</p>
+
           <form onSubmit={handleNewsletterSubmit} className="footer-form">
             <input
               type="email"
+              id="newsletter-email"
+              name="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

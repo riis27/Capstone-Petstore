@@ -1,26 +1,29 @@
 /* Home.css */
 
+
 main {
-    padding: 20px;
+    padding: 10px;
     flex: 1;
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 10px;
     text-align: center;
 }
 
 main h1 {
-    font-family: "Kaushan Script", cursive;
-    font-size: 3rem;
+    font-family: "Waterfall", cursive;
+    font-size: 5rem;
+    font-weight: 200;
+    line-height: 65%;
 }
 
 main h2 {
-    padding: 10px;
     font-size: 1.7em;
     font-family: "Castoro Titling", serif;
 }
 
 main p {
     padding: 10px;
+    font-size: 1.4rem;
 }
 
 .details p span {
@@ -32,34 +35,33 @@ main p {
     grid-column: 1 / -1;
     position: relative;
     overflow: hidden;
+    filter: brightness(110%) sepia(35%);
+    opacity: .9;
 }
 
 .featured-pet .image-block img {
     width: 100%;
     display: block;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
     transition: transform 1.9s ease;
+    margin-bottom: 20px;
     height: 400px;
 }
 
 .featured-pet .details {
     position: absolute;
-    top: 77%;
-    left: 72%;
+    top: 60%;
+    left: 50%; 
     transform: translate(-50%, -50%);
-    width: 50%;
-    color: black;
-    font-family: "Kaushan Script", cursive;
-    box-sizing: content-box;
-    text-align: right;
+    width: 80%;
+    color: white;
+    font-family: "Waterfall", cursive;
     border: none;
+    font-size: 2.2rem;
+    margin-top: 0;
 }
 
-.featured-pet .details h2 {
-    margin-top: 0;
-    font-size: 1.9em;
-}
 
 .featured-pet:hover .image-block img {
     transform: scale(1.5);
@@ -67,152 +69,144 @@ main p {
 
 .highlights,
 .adoption,
-.details,
 .stories,
+.store-details,
 .team,
 .thanks,
 .faqs,
 .services,
-.contacts {
-    border: 1px solid #ccc;
-    padding: 30px;
-    border-radius: 20px;
+.contacts,
+.Letter,
+.pet-box {
+    border: 1px solid #a09595;
+    padding: 20px; 
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(134, 125, 125, 0.3);
+    /* font-size: 1.2rem; */
+    text-align: center;
+    margin-bottom: 10px; 
 }
 
+
+/* Column Styles */
 .image-block {
     text-align: center;
     overflow: hidden;
 }
 
 .image-block img,
-.stories .story img,
+.adoption img,
+.services img,
+.story img,
 .team .member img,
 .thanks img {
     max-width: 100%;
+    min-width: 200px; 
+    min-height: 200px; 
     height: auto;
     display: block;
-    border-radius: 20px;
+    border-radius: 10px;
     object-fit: cover;
+    filter: grayscale(.3);
+    margin: 0 auto 10px; 
 }
 
 
 /* Highlights */
 .note {
     font-style: italic;
-    font-weight: bold;
-    font-family: "Kaushan Script", cursive;
-    font-size: .9em;
+    font-family: "Licorice", cursive;
+    font-size: 2rem; 
+    font-weight: 100;
 }
-
-.highlights p {
-    font-size: small;
-}
-
-/* Store Hours */
-.details p {
-    margin: auto;
-}
-
-.story p {
-    text-align: right;
-    font-size: small;
-}
-
-.member p {
-    text-align: left;
-    font-size: small;
-}
-
-
-
-
 
 
 /* Member & Customer Styles */
 .stories p {
-    padding-left: 20px;
+    padding-left: 0; 
+    text-align: center; 
 }
 
 .member p {
-    padding-right: 20px;
+    padding-right: 0;
+    text-align: center; 
 }
 
 .stories .story,
 .team .member {
     display: flex;
-    margin-bottom: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
     align-items: center;
 }
 
 .stories .story img,
 .team .member img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    margin-bottom: 10px; 
 }
 
-.thanks {
-    font-family: "Kaushan Script", cursive;
-    font-weight: bolder;
-    font-size: larger;
+.thanks img {
+    filter: grayscale(.6);
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto 15px;
 }
 
-/*  Button Style */
+.thanks p {
+    font-family: "Licorice", cursive;
+    font-weight: lighter;
+    font-size: 2.5rem; 
+}
+
+/* Button Style */
 main .button {
-    background-color: rgb(129, 111, 116);
-    font-weight: bold;
-    font-size: 2rem;
+    align-self: center;
+    font-family: "Castoro Titling", serif;
+    padding: 0.5rem 2rem; 
+    border: 1px solid #f7f4f4;
+    background-color: transparent;
     color: white;
-    padding: 12px 50px 8px 50px;
-    border-radius: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    margin: 2px auto; 
     text-decoration: none;
+    display: inline-block; 
 }
 
 main .button:hover {
-    background-color: rgb(140, 185, 140);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
+    background-color: #bbaeae;
+    color: #fff;
 }
-
-
 
 /* About Page style */
-.Letter h2 {
-    padding-top: 30px;
-    .benne-regular {
-        font-family: "Benne", serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      }
-
-.Letter sup {
-    font-size: 0.5em;
+.Letter {
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
 }
 
-.Letter {
-    margin-left: 100px;
-    margin-right: 100px;
-    text-align: center;
-    flex: 1;
-
+.Letter h2 {
+    padding-top: 20px; 
 }
 
 .Letter img {
-    border-radius: 40px !important;
-
-    margin: 20px;
-    align-self: center;
-    max-width: 100%;
+    border-radius: 20px !important;
+    margin: 10px auto; 
+    max-width: 80%; 
+    height: auto;
+    display: block;
 }
-
-
 
 /* Adoption Page Style */
 .pet-box {
     place-items: center;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
+    padding: 15px; 
     border-radius: 10px;
     margin: 10px;
     cursor: pointer;
@@ -221,7 +215,6 @@ main .button:hover {
 
 .pet-box:hover {
     transform: scale(1.05);
-
 }
 
 .pet-box img {
@@ -234,7 +227,7 @@ main .button:hover {
 .pet-box h3 {
     display: flex;
     justify-content: space-between;
-    font-size: larger;
+    font-size: 1.1rem; 
     font-weight: bold;
     align-items: center;
 }
@@ -243,12 +236,14 @@ main .button:hover {
     font-size: 0.7em;
     font-weight: normal;
     color: #777;
-    margin: 15px;
+    margin-left: 5px;
 }
 
 .pet-info {
     display: none;
     margin-top: 10px;
+    font-size: 0.9rem; 
+    text-align: left;
 }
 
 .pet-info p {
@@ -261,5 +256,81 @@ main .button:hover {
 
 .pet-container {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 10px;
+    padding: 10px; 
+}
+
+/* Responsive columns */
+/* Small Screens (Phones - up to ~600px width) */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .featured-pet .details {
+        font-size: 1.8rem;
+        top: 50%;
+        width: 90%;
+    }
+
+    .pet-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .Letter {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Medium Screens (Tablets - ~601px to ~1024px width) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-pet .details {
+        font-size: 2rem;
+        top: 50%;
+        width: 70%;
+    }
+
+    .pet-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Letter {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    p {
+        font-size: 2.2rem;
+    }
+}
+
+/* Large Screens (Desktops - ~1025px width and above) */
+@media (min-width: 1025px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured-pet .details {
+        font-size: 2.2rem;
+        top: 60%;
+        width: 50%;
+    }
+
+    .pet-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .Letter {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 }

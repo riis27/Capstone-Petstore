@@ -10,7 +10,7 @@
   .login-form {
     background: #ffffff;
     padding: 2.5rem;
-    border-radius: 1.5rem;
+    border-radius: .5rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     max-width: 400px;
     width: 100%;
@@ -31,21 +31,21 @@
     padding: 0.85rem 1rem;
     margin: 0.5rem 0 1rem;
     border: 1px solid #ccc;
-    border-radius: 0.75rem;
+    border-radius: .2rem;
     font-size: 1rem;
     font-family: inherit;
     transition: border 0.3s ease;
   }
   
   .login-form input:focus {
-    border-color: #9b7bc2; /* Soft brand color */
+    border-color: #76636e; 
     outline: none;
   }
   
   .login-form button {
     width: 100%;
     padding: 0.85rem;
-    background: #a68593; /* Modern muted lavender */
+    background: #a68593; 
     color: white;
     border: none;
     border-radius: 0.75rem;
@@ -57,13 +57,37 @@
   }
   
   .login-form button:hover {
-    background: #907883;
+    background: #c89eb1;
   }
   
   .error-message {
-    color: #d9534f;
+    color: #8e5452;
     margin-bottom: 1rem;
     text-align: center;
     font-size: 0.95rem;
+  }
+  
+  .welcome-banner {
+    background-color: #e8d5c0;
+    color: #5b4a4a;
+    font-family: "Castoro Titling", serif;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c5b2a2;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(90, 70, 70, 0.1);
+    animation: fadeInDown 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
   }
   

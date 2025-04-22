@@ -1,0 +1,312 @@
+/* Landing.css */
+.landing-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.landing-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    animation: brightenOverlay 6s ease-in-out forwards; 
+  }
+  
+  @keyframes brightenOverlay {
+    from {
+      background: rgba(0, 0, 0, 1); /* Start dull */
+    }
+    to {
+      background: rgba(222, 189, 189, 0); /* End bright */
+    }
+  }
+  
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    background-color: #000;
+    border: none;
+}
+
+
+
+
+.center-frame {
+    position: absolute;
+    z-index: 2;
+    width: 99%;
+    height: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Puppy Box */
+.puppy-box {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    opacity: -10;
+    transform: scale(0.9);
+    animation: boxGrow 1.3s ease-in-out 2.7s forwards;
+}
+
+@keyframes boxGrow {
+    0% {
+        transform: scale(0.05);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.puppy-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Top text */
+.top-text {
+    color: white;
+    font-family: "Castoro Titling", serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    opacity: 0;
+    animation: topFade 1.1s ease-out .1s forwards;
+}
+
+@keyframes topFade {
+    0% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Bottom text */
+.bottom-text {
+    color: white;
+    font-family: "Castoro Titling", serif;
+    font-size: 1.5rem;
+    margin-top: 0.4rem;
+    opacity: 0;
+    animation: bottomFade 1s ease-out 1.7s forwards;
+}
+
+@keyframes bottomFade {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Start button */
+.start-button {
+    position: absolute;
+    padding: 0.5rem 1.2rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-family: "Waterfall", cursive;
+    font-weight: 100;
+    cursor: pointer;
+    font-size: 2.6rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInButton 2.3s ease 4s forwards;
+    text-shadow: 0 0 6px rgba(238, 213, 213, 0.6);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    color: #fafafa;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Pawsh logo */
+.pawsh-logo {
+    position: absolute;
+    bottom: 4%;
+    right: 50%;
+    font-family: "Castoro Titling", serif;
+    color: white;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: fadeInLogo 1s ease 3.5s forwards;
+    z-index: 1;
+    transform: translateX(50%) translateY(10px);
+}
+
+@keyframes fadeInLogo {
+    from {
+        opacity: 0;
+        transform: translateX(50%) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);/
+    }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* XS-S Screens */
+@media (max-width: 767px) {
+    .puppy-box {
+        position: absolute;
+        bottom: 26%;
+        right: 10%;
+        min-width: 80vw;
+        max-width: 50vw;
+        height: 95vh;
+        max-height: 60vh;
+    }
+
+    .start-button {
+        position: absolute;
+        bottom: 15%;
+        font-size: 2.4rem;
+        transform: translateX(50%);
+    }
+
+    .pawsh-logo {
+        font-size: 1.2rem;
+        bottom: 2%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+
+    .top-text {
+        font-size: 1.6em;
+        position: relative;
+        top: -37%;
+    }
+
+    .bottom-text {
+        font-size: 1.6em;
+        position: relative;
+        top: 24%;
+    }
+}
+
+/* M Screens  */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .puppy-box {
+        min-width: 50vw;
+        height: 80vh;
+        max-height: 70vh;
+        max-width: 75vw;
+        right: 2%;
+        position: relative;
+    }
+
+    .start-button {
+        font-size: 3.8rem;
+        position: absolute;
+        bottom: 20%;
+        transform: translateX(50%);
+    }
+
+    .pawsh-logo {
+        font-size: 2rem;
+        bottom: 3%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .top-text,
+    .bottom-text {
+        font-size: 2.4rem;
+        color: white;
+        position: relative;
+        right: 1%;
+
+    }
+}
+
+/* L Screens */
+@media (min-width: 1025px) {
+    .puppy-box {
+        position: relative;
+        max-height: 70vh;
+        max-width: 40vw;
+        top: -5%;
+        right: 5%;
+        width: 40rem;
+        height: 42em;
+    }
+
+    .start-button {
+        position: absolute;
+        bottom: 20%;
+        font-size: 3.8rem;
+        transform: translateX(50%);
+    }
+
+    .pawsh-logo {
+        font-size: 1.6rem;
+        bottom: 3%;
+        transform: translateX(50%);
+    }
+
+    .top-text {
+        font-size: 3.2rem;
+        position: relative;
+        top: -3%;
+        right: 2%;
+    }
+
+    .bottom-text {
+        font-size: 3.2rem;
+        position: relative;
+        right: 2%;
+        bottom: 2%;
+    }
+}
